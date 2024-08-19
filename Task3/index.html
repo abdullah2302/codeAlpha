@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon1.png">
+
+    <title>Abdullah | Portfolio</title>
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Abdullah.</h2>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1 class="intro">Hi, I'm <span class="autoType"></span></h1>
+            <p>I am a Web Developer</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </header>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Crypto Price Checker</h3>
+                <img src="crypto.jpg" alt="">
+                <p>This project is a website that allows users to view real-time prices of various cryptocurrencies. The
+                    site features up-to-date data, charts, and easy navigation to help users keep track of their
+                    favorite coins.
+                    Website link <a href="https://cryptocurrency-45880.web.app/"><strong>Click Here</strong></a></p>
+                <a href="javascript:void(0);" class="cryptoButton">See More</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Project2</h3>
+                <img src="crypto.jpg" alt="">
+                <p>This project is a website that allows users to view real-time prices of various cryptocurrencies. The
+                    site features up-to-date data, charts, and easy navigation to help users keep track of their
+                    favorite coins. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ratione nobis
+                    reiciendis similique ipsum esse natus velit vel sed reprehenderit, sint repudiandae odit. Lorem,
+                    ipsum dolor sit amet consectetur adipisicing elit. Doloribus minus blanditiis, atque quisquam vero
+                    reprehenderit quasi et ipsum temporibus beatae, deserunt cumque accusantium. Here is my Crypto
+                    Website link <a href="https://cryptocurrency-45880.web.app/"><strong>Click Here</strong></a></p>
+                <a href="javascript:void(0);" class="cryptoButton">See More</a>
+            </div>
+            <div class="project-card">
+                <h3>Project3</h3>
+                <img src="crypto.jpg" alt="">
+                <p>This project is a website that allows users to view real-time prices of various cryptocurrencies. The
+                    site features up-to-date data, charts, and easy navigation to help users keep track of their
+                    favorite coins. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ratione nobis
+                    reiciendis similique ipsum esse natus velit vel sed reprehenderit, sint repudiandae odit. Lorem,
+                    ipsum dolor sit amet consectetur adipisicing elit. Doloribus minus blanditiis, atque quisquam vero
+                    reprehenderit quasi et ipsum temporibus beatae, deserunt cumque accusantium. Here is my Crypto
+                    Website link <a href="https://cryptocurrency-45880.web.app/"><strong>Click Here</strong></a></p>
+                <a href="javascript:void(0);" class="cryptoButton">See More</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Brief introduction about yourself, your skills, and your experience.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="submit-form.php" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Abdullah. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/abdullah-azhar23/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/abdullah2302" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <!-- Removed duplicate Instagram link -->
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        let typed = () => {
+            new Typed(".autoType", {
+                strings: ["Abdullah", "Developer", "Abdullah"],
+                typeSpeed: 100,
+                backSpeed: 100,
+                loop: false,
+                onComplete: (e) => {
+                    e.cursor.remove();
+                }
+            });
+        }
+        typed();
+
+        document.querySelectorAll('.cryptoButton').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var projectCard = this.closest('.project-card');
+
+                projectCard.classList.toggle('expanded');
+
+                if (projectCard.classList.contains('expanded')) {
+                    this.textContent = 'See Less';
+                } else {
+                    this.textContent = 'See More';
+                }
+            });
+        });
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+    </script>
+</body>
+
+</html>

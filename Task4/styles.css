@@ -1,0 +1,39 @@
+.music-player {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+ }
+ 
+ .song-info h2, .song-info h3 {
+    margin: 0;
+    color: #333;
+ }
+ 
+ .controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ 
+ .progress-container {
+    background-color: #ddd;
+    height: 5px;
+    border-radius: 5px;
+    margin-top: 15px;
+    position: relative;
+ }
+ 
+ #progress {
+    background-color: #4CAF50;
+    height: 100%;
+    width: 0%;
+    border-radius: 5px;
+ }
+ 

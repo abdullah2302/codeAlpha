@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.logo h2 {
+    font-family: 'Galada', cursive;
+    font-size: 2rem;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.logo h2:hover {
+    color: #FFD700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    color: white;
+    font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+
+    span.autoType, .intro {
+        font-size: 3rem !important;
+    }
+   
+}
+
+
+header.hero {
+    background: url('89781.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #FFD700;
+    margin-top: -34px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background: #FFD700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background: none;
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+section {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.projects h2,
+.about h2,
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    position: relative;
+}
+
+.projects h2::after,
+.about h2::after,
+.contact h2::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 2px;
+    background-color: #333;
+    margin: 20px auto 0;
+}
+
+.project-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    flex: 0 1 300px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: #333;
+}
+
+.project-card:hover p {
+    color: white;
+}
+
+.project-card:hover .cryptoButton {
+    color: #333;
+    background-color: #FFD700;
+    border-radius: 2px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-card p {
+    line-height: 28px;
+    height: 90px;
+    overflow: hidden;
+    color: #333;
+}
+
+.project-card.expanded p {
+    height: auto;
+}
+
+.cryptoButton {
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+    display: inline-block;
+    color: #FFD700;
+    background-color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cryptoButton:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+.project-card.expanded .cryptoButton:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+.about,
+.contact {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #FFD700;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background: none;
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer p a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+.contact-form button {
+    background: #FFD700;
+    color: #333;
+    padding: 15px;
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background: #333;
+    color: #FFD700;
+    transform: scale(1.05);
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
